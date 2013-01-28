@@ -57,7 +57,9 @@ In `laravel-root/config/error.php`, enable logging by setting this to true...
 'log' => true,
 ```
 
-# Use the connection in a blade, (...or somewhere better like a model)!
+# Use the connection in a blade!
+
+### (...or somewhere better like a model)
 
 {{ Log::write('info', 'Setting Some Info in Couchbase from blade!') }}
 {{ Log::write('info', 'CAS = ' . CouchbaseConnect::$cb->set('laravel', 'Couchbase is working in laravel')) }}
