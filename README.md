@@ -49,7 +49,14 @@ Also Add...
 CouchbaseConnect::connect();
 ```
 
-# Enable Logging since you're developing
+# Enable Logging since you're developing, and open up error reporting
+
+In your `php.ini` change error_reporting to open it up:
+
+```php
+error_reporting=E_ALL | E_STRICT
+```
+
 
 In `laravel-root/config/error.php`, enable logging by setting this to true...
 
