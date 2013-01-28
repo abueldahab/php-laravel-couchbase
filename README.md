@@ -3,11 +3,11 @@
 
 ### Drop-in class for PHP's Laravel Framework with Couchbase backend
 
-Copy the file straight from github into libraries, laravel-root is the root folder of your php laravel app...
+Curl the file straight from github into `laravel-root/application/libraries`, laravel-root is the root folder of your php laravel app...
 
 ```bash
-cd laravel-root/application/libraries
-curl https://raw.github.com/scalabl3/php-laravel-couchbase/master/couchbaseconnect.php > couchbaseconnect.php
+$ cd laravel-root/application/libraries
+$ curl https://raw.github.com/scalabl3/php-laravel-couchbase/master/couchbaseconnect.php > couchbaseconnect.php
 ```
 
 
