@@ -12,19 +12,21 @@ class CouchbaseConnect {
   {
   
     // retrieve settings from laravel-root/config/database.php 
-		extract(Config::get('database.connections.couchbase'));
+    extract(Config::get('database.connections.couchbase'));
 
     
     // create connection and save into static $cb class var
-	  CouchbaseConnect::$cb = new Couchbase($host, $bucket, $password, $bucket, true);
-
-		return CouchbaseConnect::$cb;
-	}
+    CouchbaseConnect::$cb = new Couchbase($host, $bucket, $password, $bucket, true);
+    
+    return CouchbaseConnect::$cb;
+  }
  
 
   // can be used to get, or CouchbaseConnect::$cb, but if connection hasn't been made, make it
-  public static function connection() {
+  public static function connection() 
+  {
     
+    // if static variable isn't defined or is null, try to make the connection again
     if (!isset(CouchbaseConnect::$cb) || CouchbaseConnect::$cb == NULL) {
       return CouchbaseConnect::connect();
     }
