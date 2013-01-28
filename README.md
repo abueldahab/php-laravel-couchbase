@@ -49,7 +49,7 @@ Also Add...
 CouchbaseConnect::connect();
 ```
 
-# Enable Logging since you're developing, and open up error reporting
+# Enable Error Reporting & Logging
 
 In your `php.ini` change error_reporting to open it up:
 
