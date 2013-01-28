@@ -39,6 +39,8 @@ Also Add...
 
 # Edit start.php
 
+In `laravel-root/application/start.php` you have all your application startup routines, you'll want to establish a connection to Couchbase here as well. Add this near the bottom of the file...
+
 ```php
 /*
 |--------------------------------------------------------------------------
