@@ -1,11 +1,16 @@
 # php-laravel-couchbase 
 
 
-Drop-in class for PHP's Laravel Framework with Couchbase backend
+### Drop-in class for PHP's Laravel Framework with Couchbase backend
 
-    cd laravel-root/application/libraries
-    curl https://raw.github.com/scalabl3/php-laravel-couchbase/master/couchbaseconnect.php > couchbaseconnect.php
-    
+Copy the file straight from github into libraries, laravel-root is the root folder of your php laravel app...
+
+```bash
+cd laravel-root/application/libraries
+curl https://raw.github.com/scalabl3/php-laravel-couchbase/master/couchbaseconnect.php > couchbaseconnect.php
+```
+
+
 # Edit Database Configuration Files
 
 
@@ -43,3 +48,19 @@ Also Add...
 
 CouchbaseConnect::connect();
 ```
+
+# Enable Logging since you're developing
+
+In `laravel-root/config/error.php`, enable logging by setting this to true...
+
+```php
+'log' => true,
+```
+
+# Use the connection in a blade, (...or somewhere better like a model)!
+
+{{ Log::write('info', 'Setting Some Info in Couchbase from blade!') }}
+{{ Log::write('info', 'CAS = ' . CouchbaseConnect::$cb->set('laravel', 'Couchbase is working in laravel')) }}
+{{ Log::write('info', '$cb->get = ' . CouchbaseConnect::$cb->get('laravel')) }}
+
+
